@@ -668,80 +668,86 @@ to:
 
 ## 7. Dashboard Interface & Analytical Scope
 
-Power BI is the **presentation layer**, not the place where the project defines its analytical questions.
+Power BI is the **presentation layer**, bringing the validated financial metrics into a company-level credit-risk review.
 
-The dashboard is designed around the credit-risk workflow rather than around individual metrics.
+The report is structured around three pages, each answering a different part of the assessment.
 
-### Portfolio Monitor
+### Credit Assessment
 
-**Question:**
-
-> Where across the covered population should attention be focused?
-
-This provides a starting point for identifying companies that may require deeper review rather than expecting an analyst to manually move through ~140 companies.
-
-### Borrower Financial Assessment
+![Credit Assessment Dashboard](assets/credit_assessment.png)
 
 **Question:**
 
-> What does this company's current financial condition look like, and how does it compare with appropriate peers?
+> How does the company's latest available financial position compare with the industry benchmark?
 
-This brings together:
+The **Credit Assessment** page provides the current snapshot of the selected company against the **industry median**, covering the main financial-risk dimensions:
 
-- Liquidity
-- Repayment capacity
-- Leverage
-- Refinancing exposure
-- Cash generation
-- Profitability context
-- SIC-relative positioning
+- **Liquidity Position** — Current Ratio, Quick Ratio and Cash Ratio
+- **Leverage & Debt Structure** — Debt/Assets and Short-Term Debt/Debt
+- **Earnings & Cash Generation** — Cash Earnings Conversion and ROA
+- **Repayment Capacity** — Interest Coverage, OCF/Debt and FCF/Debt
+- **Refinancing Risk** — Cash Ratio, ST Debt/Debt, OCF/Debt and FCF/Debt
+
+This page is intended to answer questions such as:
+
+- Is the company's liquidity position stronger or weaker than the industry benchmark?
+- Is the company carrying a relatively higher debt burden?
+- Does its debt structure indicate greater short-term refinancing exposure?
+- How well do earnings and operating cash generation support its debt?
+- Are repayment-capacity metrics consistent with the company's overall financial position?
+- Does the current financial position indicate areas that require closer review?
+
+The industry benchmark is dynamically determined from the selected industry context rather than using a single benchmark for the entire nine-industry population.
 
 ### Financial Trend & Renewal
 
-**Question:**
-
-> How has the company's financial resilience changed over time?
-
-The focus is on:
-
-- Direction
-- Persistence
-- Period-over-period movement
-- Liquidity trajectory
-- Leverage trajectory
-- Repayment-capacity trajectory
-- Working-capital context
-
-The dashboard should emphasize change over time rather than treating a single latest ratio as the complete picture.
-
-### Early-Warning Analysis
+![Financial Review Dashboard](assets/financial_review.png)
 
 **Question:**
 
-> Are there persistent deterioration or divergence patterns that warrant additional review?
+> How has the company's financial condition changed over its available history?
 
-Potential analytical signals include:
+The **Financial Review** page shifts the analysis from the latest snapshot to the company's historical direction.
 
-- Sustained liquidity deterioration
-- Sustained leverage deterioration
-- Repayment-capacity deterioration
-- Increasing refinancing pressure combined with weak financial capacity
-- Earnings/cash-flow divergence
+It examines four major areas:
 
-These are review signals, not automatic conclusions of distress.
+- **Liquidity Trend** — Current Ratio, Quick Ratio and Cash Ratio
+- **Working Capital Trend** — Net Working Capital
+- **Leverage & Refinancing Trend** — Debt/Assets and Short-Term Debt/Debt
+- **Repayment Capacity Trend** — Interest Coverage, OCF/Debt and FCF/Debt
 
-### Data & Methodology
+This allows questions such as:
 
-Supporting information can provide:
+- Has liquidity been improving or deteriorating over time?
+- Has the company's working-capital cushion remained stable?
+- Has leverage increased or decreased?
+- Has short-term debt exposure changed materially?
+- Has repayment capacity weakened or strengthened?
+- Are changes persistent, or are they isolated movements?
 
-- Population composition
-- Metric coverage
-- Filing composition
-- Metric definitions
-- Methodological notes
-- Analytical limitations
+The purpose is to provide historical context for a financial review or credit-line renewal rather than relying only on the latest reported values.
 
-This keeps important methodological context available without turning the main dashboard into a data dictionary.
+### Methodology & Data Context
+
+![Methodology & Data Context](assets/methodology_data_context.png)
+
+**Question:**
+
+> What data, population and metric definitions sit behind the analysis?
+
+The **Methodology & Data Context** page provides the context required to interpret the dashboard without treating the displayed metrics as standalone numbers.
+
+It communicates:
+
+- Primary SEC data source
+- 2019–2025 historical horizon
+- 10-Q and 10-K filing scope
+- Companies and usable observations covered
+- Industry population
+- Financial metric definitions and formulas
+- Analytical limitations and methodology notes
+
+The page also provides the industry composition so that the scope of the peer benchmark is visible rather than hidden behind the dashboard calculations.
 
 ### Dashboard Validation: Latest-Value Problem
 
